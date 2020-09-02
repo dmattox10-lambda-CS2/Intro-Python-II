@@ -14,6 +14,9 @@ class Player:
         if item in self.items:
             self.items.remove(item)
             room.AddItemToRoom(item)
+            print(f'Dropped item {item.name}')
+        else:
+            print(f'Not holding item {item.name}')
 
     def Items(self):
         return self.items
