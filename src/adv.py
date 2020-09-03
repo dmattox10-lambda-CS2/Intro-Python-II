@@ -3,6 +3,7 @@ from rooms import roomList, itemList
 from player import Player, Alien
 from item import Item, Key
 from tools import Tools
+import random
 
 #
 # Main
@@ -23,15 +24,41 @@ from tools import Tools
 aliensList = []
 name = input('Enter your name.... ')
 player = Player(name, roomList['A1'])
-mob1 = Alien(Tools().randomName(), Tools().randomRoom())
-mob2 = Alien(Tools().randomName(), Tools().randomRoom())
-print(f'{mob1.name}, {mob1.current_room}')
-print(f'{mob2.name}, {mob2.current_room}')
+# mob1 = Alien(Tools().randomName(), Tools().randomRoom())
+# mob2 = Alien(Tools().randomName(), Tools().randomRoom())
+# print(f'{mob1.name}, {mob1.current_room}')
+# print(f'{mob2.name}, {mob2.current_room}')
 print('[q] to quit, [n,e,s,w] to move, [help] for more')
+
+
+def fight():
+    pass
+
+
+def moveAliens():
+
+    for i, alien in enumerate(aliensList):
+        directionsDict = {
+            'n_to': alien.current_room.n_to,
+            'e_to': alien.current_room.e_to,
+            's_to': alien.current_room.s_to,
+            'w_to': alien.current_room.w_to
+        }
+        directionsList = ['n_to', 'e_to', 's_to', 'w_to']
+        choice = random.randint(0, len(directionsList) - 1)
+        path = directionsDict[directionsList[choice]]
+        if path is not None:
+            alien.current_room = path
+            if alien.current_room.name == 'E5':
+                aliensList.pop(i)
+
+        print(f'{alien.current_room.name}')
+
+
 while True:
     if len(aliensList) < 2:
         alienName = Tools().randomName()
-        aliensList.append({alienName: Alien(alienName, Tools().randomRoom())})
+        aliensList.append(Alien(alienName, Tools().randomRoom()))
     print(f'{player}, you have {player.food} food.')
     print(f'{player.current_room.description}')
     print('\n')
@@ -43,27 +70,23 @@ while True:
         if cmd[0] == 'n':
             if player.current_room.n_to:
                 player.current_room = player.current_room.n_to
-                player.Eat()
             else:
                 print('There is no path in that direction!')
 
         if cmd[0] == 'e':
             if player.current_room.e_to:
                 player.current_room = player.current_room.e_to
-                player.Eat()
             else:
                 print('There is no path in that direction!')
 
         if cmd[0] == 's':
             if player.current_room.s_to:
                 player.current_room = player.current_room.s_to
-                player.Eat()
             else:
                 print('There is no path in that direction!')
         if cmd[0] == 'w':
             if player.current_room.w_to:
                 player.current_room = player.current_room.w_to
-                player.Eat()
             else:
                 print('There is no path in that direction!')
         if cmd[0] == 'help':
@@ -105,10 +128,10 @@ while True:
                     player.current_room.ListItems()
                 elif itemList[itemcmd].name == 'test':
                     print('The system is working!')
-                elif itemList[itemcmd].name == 'DL-44':
+                elif itemList[itemcmd].name == 'blaster':
                     index = None
                     for i in range(len(player.Items())):
-                        if player.Items()[i].name == 'DL-44':
+                        if player.Items()[i].name == 'blaster':
                             index = i
                     if player.Items()[i].charges > 0:
                         player.Items()[i].charges -= 1
@@ -125,3 +148,5 @@ while True:
     if player.current_room.name == 'E5':
         print('You win!')
         exit(0)
+
+    moveAliens()

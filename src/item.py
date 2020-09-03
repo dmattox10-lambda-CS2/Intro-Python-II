@@ -1,5 +1,6 @@
 class Item:
-    def __init__(self, name, description):
+    def __init__(self, itemType, name, description):
+        self.itemType = itemType
         self.name = name
         self.description = description
 
@@ -8,20 +9,19 @@ class Item:
 
 
 class Key(Item):
-    def __init__(self, name, description, door):
-        super().__init__(name, description)
-        self.door = door
+    def __init__(self, itemType, name, description):
+        super().__init__(itemType, name, description)
 
 
 class Food(Item):
-    def __init__(self, name, description, servings):
-        super().__init__(name, description)
+    def __init__(self, itemType, name, description, servings):
+        super().__init__(itemType, name, description)
         self.servings = servings
 
 
 class Blaster(Item):
-    def __init__(self, name, description, charges=4):
-        super().__init__(name, description)
+    def __init__(self, itemType, name, description, charges=4):
+        super().__init__(itemType, name, description)
         self.charges = charges
 
     def addBattery(self, Battery):
@@ -29,6 +29,6 @@ class Blaster(Item):
 
 
 class Battery(Item):
-    def __init__(self, name, description, charges=4):
-        super().__init__(name, description)
+    def __init__(self, itemType, name, description, charges=4):
+        super().__init__(itemType, name, description)
         self.charges = charges

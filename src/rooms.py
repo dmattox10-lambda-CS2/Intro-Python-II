@@ -65,20 +65,23 @@ roomList['D4'].e_to = roomList['E4']
 roomList['E4'].n_to = roomList['E5']
 
 itemList = {
-    'torch': Item('torch', 'Lights the way!'),
-    'test': Item('test', 'Tests the system!'),
-    'blaster': Blaster('DL-44', 'Han shot first, use it wisely!'),
-    'battery': Battery('DL-44P', 'Battery for the blaster'),
-    'apple': Food('Food', 'Apple', 1),
-    'banana': Food('Food', 'Banana', 1),
-    'twinkies': Food('Food', 'Twinkies - They never go bad', 2),
-    'jerky': Food('Food', 'Beef Jerky', 5),
-    'MRE': Food('Food', 'MRE', 2),
-    'bar': Food('Food', 'Protein Bar', 2),
-    'chips': Food('Food', 'Chips, mostly air', 1),
-    'cake': Food('Food', 'The cake is NOT a lie!', 8),
-    'sandwich': Food('Food', 'Sandwich, old, but it\'s better than starving', 2),
-    'chocolate': Food('Food', 'Chocolate?', 1)
+    'torch': Item('torch', 'torch', 'Lights the way!'),
+    'test': Item('test', 'test', 'Tests the system!'),
+    'blaster': Blaster('blaster', 'blaster', 'DL-44! Han shot first, use it wisely!'),
+    'battery': Battery('battery', 'battery', 'Battery for the blaster'),
+    'red': Key('key', 'red', 'Red Key Card'),
+    'blue': Key('key', 'blue', 'Blue Key Card'),
+    'green': Key('key', 'green', 'Green Key Card'),
+    'apple': Food('food', 'apple', 'Apple', 1),
+    'banana': Food('food', 'banana', 'Banana', 1),
+    'twinkies': Food('food', 'twinkies', 'Twinkies - They never go bad', 2),
+    'jerky': Food('food', 'jerky', 'Beef Jerky', 5),
+    'MRE': Food('food', 'MRE', 'MRE', 2),
+    'bar': Food('food', 'bar', 'Protein Bar', 2),
+    'chips': Food('food', 'chips', 'Chips, mostly air', 1),
+    'cake': Food('food', 'cake', 'The cake is NOT a lie!', 8),
+    'sandwich': Food('food', 'sandwich', 'Sandwich, old, but it\'s better than starving', 2),
+    'chocolate': Food('food', 'chocolate', 'Chocolate?', 1)
 }
 
 roomList['A1'].AddItemToRoom(itemList['torch'])
