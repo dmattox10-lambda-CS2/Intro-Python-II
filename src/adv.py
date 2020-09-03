@@ -21,7 +21,8 @@ import random
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
-
+for roomEntry in roomList:
+    roomList[roomEntry].ListItems()
 aliensList = []
 name = input('Enter your name.... ')
 player = Player(name, roomList['A1'])
@@ -37,6 +38,7 @@ def fight():
 
 
 def moveAliens():
+
     for i, alien in enumerate(aliensList):
         directionsDict = {
             'n_to': alien.current_room.n_to,
@@ -62,7 +64,7 @@ while True:
     print(f'{player.current_room.description}')
     print('\n')
     cmd = input(f'Please enter a command... ').split(' ')
-    
+
     if len(cmd) == 1:
         if cmd[0] == 'q':
             exit(0)
