@@ -1,5 +1,5 @@
 from room import Room
-from item import Item, Key, Food, Raygun
+from item import Item, Key, Food, Blaster, Battery
 
 roomList = {
     'A1': Room('A1', "Room A1", "On the floor in the center of the room is an engraving: A1. There is passage to the East "),
@@ -67,6 +67,8 @@ roomList['E4'].n_to = roomList['E5']
 itemList = {
     'torch': Item('torch', 'Lights the way!'),
     'test': Item('test', 'Tests the system!'),
+    'blaster': Blaster('DL-44', 'Han shot first, use it wisely!'),
+    'battery': Battery('DL-44P', 'Battery for the blaster'),
     'apple': Food('Food', 'Apple', 1),
     'banana': Food('Food', 'Banana', 1),
     'twinkies': Food('Food', 'Twinkies - They never go bad', 2),
@@ -81,39 +83,6 @@ itemList = {
 
 roomList['A1'].AddItemToRoom(itemList['torch'])
 roomList['A1'].AddItemToRoom(itemList['test'])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
-# roomList[].AddItemToRoom(itemList[])
+roomList['A1'].AddItemToRoom(itemList['blaster'])
+roomList['B2'].AddItemToRoom(itemList['battery'])
+roomList['C3'].AddItemToRoom(itemList['battery'])

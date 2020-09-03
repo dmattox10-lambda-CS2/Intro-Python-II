@@ -19,6 +19,16 @@ class Food(Item):
         self.servings = servings
 
 
-class Raygun(Item):
-    def __init__(self, name, description, charges):
+class Blaster(Item):
+    def __init__(self, name, description, charges=4):
         super().__init__(name, description)
+        self.charges = charges
+
+    def addBattery(self, Battery):
+        self.charges += Battery.charges
+
+
+class Battery(Item):
+    def __init__(self, name, description, charges=4):
+        super().__init__(name, description)
+        self.charges = charges

@@ -7,7 +7,6 @@ from tools import Tools
 #
 # Main
 #
-t = Tools()
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
@@ -21,14 +20,18 @@ t = Tools()
 #
 # If the user enters "q", quit the game.
 
+aliensList = []
 name = input('Enter your name.... ')
 player = Player(name, roomList['A1'])
-mob1 = Alien(t.randomName(), t.randomRoom())
-mob2 = Alien(t.randomName(), t.randomRoom())
+mob1 = Alien(Tools().randomName(), Tools().randomRoom())
+mob2 = Alien(Tools().randomName(), Tools().randomRoom())
 print(f'{mob1.name}, {mob1.current_room}')
 print(f'{mob2.name}, {mob2.current_room}')
 print('[q] to quit, [n,e,s,w] to move, [help] for more')
 while True:
+    if len(aliensList) < 2:
+        alienName = Tools().randomName()
+        aliensList.append({alienName: Alien(alienName, Tools().randomRoom())})
     print(f'{player}, you have {player.food} food.')
     print(f'{player.current_room.description}')
     print('\n')
@@ -100,8 +103,20 @@ while True:
             if itemList[itemcmd] in player.items:
                 if itemList[itemcmd].name == 'torch':
                     player.current_room.ListItems()
-                if itemList[itemcmd].name == 'test':
+                elif itemList[itemcmd].name == 'test':
                     print('The system is working!')
+                elif itemList[itemcmd].name == 'DL-44':
+                    index = None
+                    for i in range(len(player.Items())):
+                        if player.Items()[i].name == 'DL-44':
+                            index = i
+                    if player.Items()[i].charges > 0:
+                        player.Items()[i].charges -= 1
+                        shots = player.Items()[i].charges
+                        print(
+                            f'You fired your blaster! It has {shots} shots left!')
+                    else:
+                        print(f'Your blaster doesn\'t function!')
                 else:
                     pass
         else:
