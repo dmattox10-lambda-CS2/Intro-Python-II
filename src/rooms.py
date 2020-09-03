@@ -1,5 +1,5 @@
 from room import Room
-from item import Item, Key
+from item import Item, Key, Food, Raygun
 
 roomList = {
     'A1': Room('A1', "Room A1", "On the floor in the center of the room is an engraving: A1. There is passage to the East "),
@@ -66,8 +66,54 @@ roomList['E4'].n_to = roomList['E5']
 
 itemList = {
     'torch': Item('torch', 'Lights the way!'),
-    'test': Item('test', 'Tests the system!')
+    'test': Item('test', 'Tests the system!'),
+    'apple': Food('Food', 'Apple', 1),
+    'banana': Food('Food', 'Banana', 1),
+    'twinkies': Food('Food', 'Twinkies - They never go bad', 2),
+    'jerky': Food('Food', 'Beef Jerky', 5),
+    'MRE': Food('Food', 'MRE', 2),
+    'bar': Food('Food', 'Protein Bar', 2),
+    'chips': Food('Food', 'Chips, mostly air', 1),
+    'cake': Food('Food', 'The cake is NOT a lie!', 8),
+    'sandwich': Food('Food', 'Sandwich, old, but it\'s better than starving', 2),
+    'chocolate': Food('Food', 'Chocolate?', 1)
 }
 
 roomList['A1'].AddItemToRoom(itemList['torch'])
 roomList['A1'].AddItemToRoom(itemList['test'])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])
+# roomList[].AddItemToRoom(itemList[])

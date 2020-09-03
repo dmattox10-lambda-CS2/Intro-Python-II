@@ -11,3 +11,14 @@ class Key(Item):
     def __init__(self, name, description, door):
         super().__init__(name, description)
         self.door = door
+
+
+class Food(Item):
+    def __init__(self, name, description, servings):
+        super().__init__(name, description)
+        self.servings = servings
+
+
+class Raygun(Item):
+    def __init__(self, name, description, charges):
+        super().__init__(name, description)

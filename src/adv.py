@@ -1,12 +1,13 @@
 from room import Room
 from rooms import roomList, itemList
-from player import Player
+from player import Player, Alien
 from item import Item, Key
+from tools import Tools
 
 #
 # Main
 #
-
+t = Tools()
 # Make a new player object that is currently in the 'outside' room.
 
 # Write a loop that:
@@ -22,10 +23,16 @@ from item import Item, Key
 
 name = input('Enter your name.... ')
 player = Player(name, roomList['A1'])
+mob1 = Alien(t.randomName(), t.randomRoom())
+mob2 = Alien(t.randomName(), t.randomRoom())
+print(f'{mob1.name}, {mob1.current_room}')
+print(f'{mob2.name}, {mob2.current_room}')
 print('[q] to quit, [n,e,s,w] to move, [help] for more')
 while True:
+    print(f'{player}, you have {player.food} food.')
+    print(f'{player.current_room.description}')
     print('\n')
-    cmd = input(f'{player}, enter a command... ').split(' ')
+    cmd = input(f'Please enter a command... ').split(' ')
 
     if len(cmd) == 1:
         if cmd[0] == 'q':
@@ -33,27 +40,27 @@ while True:
         if cmd[0] == 'n':
             if player.current_room.n_to:
                 player.current_room = player.current_room.n_to
-                print(f'{player.current_room.description}')
+                player.Eat()
             else:
                 print('There is no path in that direction!')
 
         if cmd[0] == 'e':
             if player.current_room.e_to:
                 player.current_room = player.current_room.e_to
-                print(f'{player.current_room.description}')
+                player.Eat()
             else:
                 print('There is no path in that direction!')
 
         if cmd[0] == 's':
             if player.current_room.s_to:
                 player.current_room = player.current_room.s_to
-                print(f'{player.current_room.description}')
+                player.Eat()
             else:
                 print('There is no path in that direction!')
         if cmd[0] == 'w':
             if player.current_room.w_to:
                 player.current_room = player.current_room.w_to
-                print(f'{player.current_room.description}')
+                player.Eat()
             else:
                 print('There is no path in that direction!')
         if cmd[0] == 'help':
