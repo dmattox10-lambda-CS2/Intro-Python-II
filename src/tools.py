@@ -1,4 +1,5 @@
-from rooms import roomList, itemList
+from rooms import roomList
+from items import itemList
 from room import Room
 from item import Item, Key, Food, Blaster, Battery
 import random

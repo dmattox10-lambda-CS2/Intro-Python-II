@@ -1,5 +1,6 @@
 from room import Room
-from rooms import roomList, itemList
+from rooms import roomList
+from items import itemList
 from player import Player, Alien
 from item import Item, Key
 from tools import Tools
@@ -36,7 +37,6 @@ def fight():
 
 
 def moveAliens():
-
     for i, alien in enumerate(aliensList):
         directionsDict = {
             'n_to': alien.current_room.n_to,
@@ -51,7 +51,6 @@ def moveAliens():
             alien.current_room = path
             if alien.current_room.name == 'E5':
                 aliensList.pop(i)
-
         print(f'{alien.current_room.name}')
 
 
@@ -63,7 +62,7 @@ while True:
     print(f'{player.current_room.description}')
     print('\n')
     cmd = input(f'Please enter a command... ').split(' ')
-
+    
     if len(cmd) == 1:
         if cmd[0] == 'q':
             exit(0)
