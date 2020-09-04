@@ -22,7 +22,7 @@ itemList = {
 }
 
 roomList['A1'].AddItemToRoom(itemList['torch'])
-# roomList['A1'].AddItemToRoom(itemList['test'])
-# roomList['A1'].AddItemToRoom(itemList['blaster'])
-# roomList['B2'].AddItemToRoom(itemList['battery'])
-# roomList['C3'].AddItemToRoom(itemList['battery'])
+roomList['A1'].AddItemToRoom(itemList['test'])
+roomList['A1'].AddItemToRoom(itemList['blaster'])
+roomList['B2'].AddItemToRoom(itemList['battery'])
+roomList['C3'].AddItemToRoom(itemList['battery'])

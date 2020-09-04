@@ -21,8 +21,7 @@ import random
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
-for roomEntry in roomList:
-    roomList[roomEntry].ListItems()
+
 aliensList = []
 name = input('Enter your name.... ')
 player = Player(name, roomList['A1'])
@@ -113,9 +112,7 @@ while True:
                 else:
                     print(f'Didnt find {itemcmd}')
             elif itemcmd == 'torch':
-                # print(roomList[Player.Location(player)].Items()) # Prints OBJECT
                 if itemList[itemcmd] in player.current_room.Items():
-                    # print(roomList[Player.Location(player)].Items()) # Prints nothing
                     player.current_room.AddItemToPlayer(
                         itemList[itemcmd], player)
             else:
