@@ -1,5 +1,27 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
+# Player Class:
+# Attributes:
+# name: Name of the player.
+# current_room: The room where the player is currently located.
+# items: List of items the player is carrying.
+# food: Amount of food the player has.
+# health: Player's health points.
+# Methods:
+# Eat(): Decreases the player's food by 1. If food reaches 0, the player starves to death.
+# AddItem(item): Adds an item to the player's inventory and adjusts food accordingly for food items. If the item is poisoned chocolate, the player's food is halved and they get sick.
+# Drop(item, room): Drops an item from the player's inventory into the specified room.
+# Items(): Returns the list of items the player is carrying.
+# Location(): Returns the name of the room where the player is located.
+# Surroundings(): Returns the description of the current room.
+# TakeWound(): Placeholder method for handling player wounds.
+# Heal(): Placeholder method for healing the player.
+# __str__(): Returns the player's name.
+# Alien Class (Inherits from Player):
+# Represents an alien character in the game.
+# Inherits from the Player class and inherits its attributes and methods.
+# Additional methods or attributes specific to aliens can be added in the future.
+# Both classes provide a framework for handling player and alien characters in the game, including their attributes, methods for interacting with items and the environment, and placeholder methods for future expansion.
 import math
 
 

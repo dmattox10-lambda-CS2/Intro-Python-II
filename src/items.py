@@ -1,9 +1,24 @@
+
+# The items.py file contains a dictionary called itemList which maps item names to instances of different item classes. Each item has a unique name, item type, and description. Here's a breakdown of the items defined in the itemList dictionary:
+
+# torch: An instance of the Item class representing a torch that lights the way.
+# test: An instance of the Item class used for testing purposes.
+# blaster: An instance of the Blaster class representing a DL-44 blaster. It has a limited number of charges.
+# battery: An instance of the Battery class representing a battery for the blaster. It can recharge the blaster.
+# red, blue, green: Instances of the Key class representing different colored key cards.
+# apple, banana, twinkies, jerky, MRE, bar, chips, cake, sandwich, chocolate: Instances of the Food class representing different types of food items with varying numbers of servings.
+# Additionally, the code snippet adds some of these items to specific rooms within the game world using the AddItemToRoom method of the Room class. For example:
+
+# Torch, test, and blaster are added to room 'A1'.
+# Batteries are added to rooms 'B2' and 'C3'.
+# This setup ensures that these items are available for players to interact with when exploring the corresponding rooms in the game.
+
 from rooms import roomList
 from item import Item, Key, Food, Blaster, Battery
 
 itemList = {
     'torch': Item('torch', 'torch', 'Lights the way!'),
-    'test': Item('test', 'test', 'Tests the system!'),
+    'test': Item('test', 'test', 'Wait, that\'s not supposed to be here!'),
     'blaster': Blaster('blaster', 'blaster', 'DL-44! Han shot first, use it wisely!'),
     'battery': Battery('battery', 'battery', 'Battery for the blaster'),
     'red': Key('key', 'red', 'Red Key Card'),

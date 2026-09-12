@@ -5,7 +5,25 @@ from player import Player, Alien
 from item import Item, Key
 from tools import Tools
 import random
-
+# Imports: The script imports various modules including Room, roomList, itemList, Player, Alien, Item, Key, Tools, and random.
+# Initialization:
+# It initializes an empty list called aliensList.
+# It prompts the user to input their name to create a Player object and sets the initial room for the player to 'A1'.
+# It prints out initial instructions for the game.
+# Functions:
+# fight(): Placeholder function for handling combat mechanics, currently empty.
+# moveAliens(): Function to move alien characters within the game. It randomly selects a direction for each alien to move in and updates their current room accordingly.
+# Main Game Loop:
+# The script enters an infinite loop where the game logic is executed.
+# It checks if the number of aliens in the game is less than 2, if so, it adds random aliens to the game.
+# It prints out player information such as name and food.
+# It prints out the description of the current room.
+# It waits for user input to determine the player's actions.
+# The user can input commands to move in different directions (n, e, s, w), quit the game (q), get help (help), cheat by viewing items in the current room (cheat), or look around (look).
+# The user can also interact with items using commands like take, drop, and use.
+# If the player reaches room 'E5', they win the game.
+# After each player action, the function moveAliens() is called to move aliens randomly within the game world.
+# Overall, the script manages player actions, room navigation, item interactions, and the movement of alien characters within the game environment.
 #
 # Main
 #

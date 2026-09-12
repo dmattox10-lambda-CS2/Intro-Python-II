@@ -1,5 +1,29 @@
 from room import Room
 
+# The rooms.py file defines a dictionary named roomList, which contains instances of the Room class representing different rooms in the game. Each room has a name, description, and connections to neighboring rooms (if any). Here's an overview of the rooms and their connections:
+
+# Room A1:
+# Description: "On the floor in the center of the room is an engraving: A1. There is a passage to the East."
+# East: Room B1
+# Room B1:
+# Description: "On the floor in the center of the room is an engraving: B1. There is a passage to the West, North, and East."
+# West: Room A1
+# North: Room B2
+# East: Room C1
+# Room C1:
+# Description: "On the floor in the center of the room is an engraving: C1. There is a passage to the West, and East."
+# West: Room B1
+# East: Room D1
+# Room D1:
+# Description: "On the floor in the center of the room is an engraving: D1. There is a passage to the West, and East."
+# West: Room C1
+# East: Room E1
+# Room E1:
+# Description: "On the floor in the center of the room is an engraving: E1. There is a passage to the West."
+# West: Room D1
+# The connections between rooms are established by setting the n_to, e_to, s_to, and w_to attributes of each room accordingly.
+
+# This pattern continues for all other rooms in the dictionary, defining their descriptions and connections with neighboring rooms. This setup forms the structure of the game world, allowing players to navigate between rooms as they explore the game environment.
 roomList = {
     'A1': Room('A1', "Room A1", "On the floor in the center of the room is an engraving: A1. There is passage to the East "),
     'B1': Room('B1', "Room B1", "On the floor in the center of the room is an engraving: B1. There is a passage to the West, North, and East "),
